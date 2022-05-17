@@ -1,0 +1,36 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "b017126b-ce2d-426a-b33d-427496dc84f0": {
+      "ProjectGuid": "b017126b-ce2d-426a-b33d-427496dc84f0",
+      "DisplayName": "ProyectoPACSD",
+      "ColorIndex": 0
+    },
+    "a62cc479-d34f-467e-9402-76113e990b8c": {
+      "ProjectGuid": "a62cc479-d34f-467e-9402-76113e990b8c",
+      "DisplayName": "BML",
+      "ColorIndex": 1
+    },
+    "4aced458-1e00-4ac5-9408-1b5cc569ffd1": {
+      "ProjectGuid": "4aced458-1e00-4ac5-9408-1b5cc569ffd1",
+      "DisplayName": "DAL",
+      "ColorIndex": 2
+    },
+    "e9a119dd-d111-4bd9-ad9e-a6a43e25a5c2": {
+      "ProjectGuid": "e9a119dd-d111-4bd9-ad9e-a6a43e25a5c2",
+      "DisplayName": "Bussiness Model Layer",
+      "ColorIndex": 3
+    },
+    "d50376ba-fb0c-4992-9d59-04fd7b30ab29": {
+      "ProjectGuid": "d50376ba-fb0c-4992-9d59-04fd7b30ab29",
+      "DisplayName": "Data Access Layer",
+      "ColorIndex": 4
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Archivos varios",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 5
+}
