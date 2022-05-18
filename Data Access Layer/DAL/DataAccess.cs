@@ -14,7 +14,7 @@ namespace DAL
         #region Singleton
         private static volatile DataAccess instance = null;
         private static readonly object padlock = new object();
-        public static string conString = "Data Source=JRAD;Initial Catalog=ProyectoPACSD;Integrated Security=True";
+        public static string conString = "Data Source=server-proyectopacsd.database.windows.net;Initial Catalog=ProyectoPACSD;User ID=ProyectoPACSD;Password=JREJ_2022";
         public string initialCatalog = "";
         public string DataSource = "";
         public string UserID = "";

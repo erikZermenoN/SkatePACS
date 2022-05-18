@@ -42,3 +42,14 @@ C:\Users\josea\Desktop\Proyecto2doParcial\Bussiness Model Layer\BML\obj\Debug\BM
 C:\Users\josea\Desktop\Proyecto2doParcial\Bussiness Model Layer\BML\obj\Debug\BML.csproj.CopyComplete
 C:\Users\josea\Desktop\Proyecto2doParcial\Bussiness Model Layer\BML\obj\Debug\BML.dll
 C:\Users\josea\Desktop\Proyecto2doParcial\Bussiness Model Layer\BML\obj\Debug\BML.pdb
+D:\Usuarios\zerme\Documents\ITSPR\6°Semestre\PROGRAMACION EN AMBIENTE CLIENTE SERVIDOR\3ER PARCIAL\Proyecto\Bussiness Model Layer\BML\bin\Debug\BML.dll
+D:\Usuarios\zerme\Documents\ITSPR\6°Semestre\PROGRAMACION EN AMBIENTE CLIENTE SERVIDOR\3ER PARCIAL\Proyecto\Bussiness Model Layer\BML\bin\Debug\BML.pdb
+D:\Usuarios\zerme\Documents\ITSPR\6°Semestre\PROGRAMACION EN AMBIENTE CLIENTE SERVIDOR\3ER PARCIAL\Proyecto\Bussiness Model Layer\BML\bin\Debug\DAL.dll
+D:\Usuarios\zerme\Documents\ITSPR\6°Semestre\PROGRAMACION EN AMBIENTE CLIENTE SERVIDOR\3ER PARCIAL\Proyecto\Bussiness Model Layer\BML\bin\Debug\Dapper.dll
+D:\Usuarios\zerme\Documents\ITSPR\6°Semestre\PROGRAMACION EN AMBIENTE CLIENTE SERVIDOR\3ER PARCIAL\Proyecto\Bussiness Model Layer\BML\bin\Debug\DAL.pdb
+D:\Usuarios\zerme\Documents\ITSPR\6°Semestre\PROGRAMACION EN AMBIENTE CLIENTE SERVIDOR\3ER PARCIAL\Proyecto\Bussiness Model Layer\BML\bin\Debug\Dapper.xml
+D:\Usuarios\zerme\Documents\ITSPR\6°Semestre\PROGRAMACION EN AMBIENTE CLIENTE SERVIDOR\3ER PARCIAL\Proyecto\Bussiness Model Layer\BML\obj\Debug\BML.csproj.AssemblyReference.cache
+D:\Usuarios\zerme\Documents\ITSPR\6°Semestre\PROGRAMACION EN AMBIENTE CLIENTE SERVIDOR\3ER PARCIAL\Proyecto\Bussiness Model Layer\BML\obj\Debug\BML.csproj.CoreCompileInputs.cache
+D:\Usuarios\zerme\Documents\ITSPR\6°Semestre\PROGRAMACION EN AMBIENTE CLIENTE SERVIDOR\3ER PARCIAL\Proyecto\Bussiness Model Layer\BML\obj\Debug\BML.csproj.CopyComplete
+D:\Usuarios\zerme\Documents\ITSPR\6°Semestre\PROGRAMACION EN AMBIENTE CLIENTE SERVIDOR\3ER PARCIAL\Proyecto\Bussiness Model Layer\BML\obj\Debug\BML.dll
+D:\Usuarios\zerme\Documents\ITSPR\6°Semestre\PROGRAMACION EN AMBIENTE CLIENTE SERVIDOR\3ER PARCIAL\Proyecto\Bussiness Model Layer\BML\obj\Debug\BML.pdb

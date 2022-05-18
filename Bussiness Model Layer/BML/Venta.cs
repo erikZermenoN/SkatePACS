@@ -33,7 +33,12 @@ namespace BML
             parameters.Add("@total", total);
             return dataAccess.Execute("stp_ventas_add", parameters);
         }
-
+        public int Delete()
+        {
+            var parameters = new DynamicParameters();
+            parameters.Add("@idVenta", idVenta);
+            return dataAccess.Execute("stp_ventas_delete", parameters);
+        }
         public IEnumerable<Venta> GetAll()
         {
             return dataAccess.Query<Venta>("stp_ventas_getall");

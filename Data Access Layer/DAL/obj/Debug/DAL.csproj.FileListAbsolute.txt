@@ -34,3 +34,12 @@ C:\Users\josea\Desktop\Proyecto2doParcial\Data Access Layer\DAL\obj\Debug\DAL.cs
 C:\Users\josea\Desktop\Proyecto2doParcial\Data Access Layer\DAL\obj\Debug\DAL.csproj.CopyComplete
 C:\Users\josea\Desktop\Proyecto2doParcial\Data Access Layer\DAL\obj\Debug\DAL.dll
 C:\Users\josea\Desktop\Proyecto2doParcial\Data Access Layer\DAL\obj\Debug\DAL.pdb
+D:\Usuarios\zerme\Documents\ITSPR\6°Semestre\PROGRAMACION EN AMBIENTE CLIENTE SERVIDOR\3ER PARCIAL\Proyecto\Data Access Layer\DAL\bin\Debug\DAL.dll
+D:\Usuarios\zerme\Documents\ITSPR\6°Semestre\PROGRAMACION EN AMBIENTE CLIENTE SERVIDOR\3ER PARCIAL\Proyecto\Data Access Layer\DAL\bin\Debug\DAL.pdb
+D:\Usuarios\zerme\Documents\ITSPR\6°Semestre\PROGRAMACION EN AMBIENTE CLIENTE SERVIDOR\3ER PARCIAL\Proyecto\Data Access Layer\DAL\bin\Debug\Dapper.dll
+D:\Usuarios\zerme\Documents\ITSPR\6°Semestre\PROGRAMACION EN AMBIENTE CLIENTE SERVIDOR\3ER PARCIAL\Proyecto\Data Access Layer\DAL\bin\Debug\Dapper.xml
+D:\Usuarios\zerme\Documents\ITSPR\6°Semestre\PROGRAMACION EN AMBIENTE CLIENTE SERVIDOR\3ER PARCIAL\Proyecto\Data Access Layer\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+D:\Usuarios\zerme\Documents\ITSPR\6°Semestre\PROGRAMACION EN AMBIENTE CLIENTE SERVIDOR\3ER PARCIAL\Proyecto\Data Access Layer\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+D:\Usuarios\zerme\Documents\ITSPR\6°Semestre\PROGRAMACION EN AMBIENTE CLIENTE SERVIDOR\3ER PARCIAL\Proyecto\Data Access Layer\DAL\obj\Debug\DAL.csproj.CopyComplete
+D:\Usuarios\zerme\Documents\ITSPR\6°Semestre\PROGRAMACION EN AMBIENTE CLIENTE SERVIDOR\3ER PARCIAL\Proyecto\Data Access Layer\DAL\obj\Debug\DAL.dll
+D:\Usuarios\zerme\Documents\ITSPR\6°Semestre\PROGRAMACION EN AMBIENTE CLIENTE SERVIDOR\3ER PARCIAL\Proyecto\Data Access Layer\DAL\obj\Debug\DAL.pdb
