@@ -11,10 +11,10 @@ namespace BML
     public class InicioSesion
     {
         public int idInicioSesion { get; set; }
-        public string idUsuario { get; set; }
-        public string fechaInicio { get; set; }
-        public string fechaTermino { get; set; }
-        public string fechaLimite { get; set; }
+        public int idUsuario { get; set; }
+        public DateTime fechaInicio { get; set; }
+        public DateTime fechaTermino { get; set; }
+        public DateTime fechaLimite { get; set; }
         public bool activo { get; set; }
 
         private DataAccess dataAccess = DataAccess.Instance();
@@ -41,7 +41,9 @@ namespace BML
 
         public InicioSesion GetByActivo()
         {
-            return dataAccess.QuerySingle<InicioSesion>("stp_iniciosesiones_getbyActivo");
+            var parameters = new DynamicParameters();
+            parameters.Add("@activo", activo);
+            return dataAccess.QuerySingle<InicioSesion>("stp_iniciosesiones_getbyactivo", parameters);
         }
 
     }

@@ -1,4 +1,5 @@
-﻿using DevExpress.XtraEditors;
+﻿using BML;
+using DevExpress.XtraEditors;
 using DevExpress.XtraSplashScreen;
 using System;
 using System.Collections.Generic;
@@ -80,6 +81,17 @@ namespace ProyectoPACSD
 
             if (opcion == DialogResult.OK)
             {
+                if (new InicioSesion { activo = true }.GetByActivo() != null)
+                {
+                    if (new InicioSesion
+                    {
+                        idInicioSesion = new InicioSesion { activo = true }.GetByActivo().idInicioSesion,
+                        fechaTermino = DateTime.Now
+                    }.CerrarSesion() > 0)
+                    {
+                    }
+                }
+                
                frmLogin form  = new frmLogin();
                form.Visible = true;
                this.Dispose();

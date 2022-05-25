@@ -14,13 +14,28 @@ namespace ProyectoPACSD
 
         private void btnIniciarSesion_Click(object sender, EventArgs e)
         {
-
-            if (new Usuario
+            Usuario usuario = new Usuario
             {
                 usuario = txtUsuario.Text,
                 contrasena = txtContrasena.Text
-            }.Login() != null)
+            }.Login();
+
+            if (usuario != null)
             {
+                
+                if (chMantener.Checked == true)
+                {
+                    if (new InicioSesion {
+                        idUsuario = usuario.idUsuario,
+                        fechaInicio = DateTime.Now,
+                        fechaLimite = DateTime.Now.AddDays(15),
+                        fechaTermino = DateTime.Now
+                    }.InicioDeSesion() > 0)
+                    {
+
+                    }
+                }
+
                 MessageBox.Show("Has accedido correctamente", "BIENVENIDO",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
 

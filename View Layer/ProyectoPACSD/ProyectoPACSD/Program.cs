@@ -1,4 +1,5 @@
-﻿using DevExpress.LookAndFeel;
+﻿using BML;
+using DevExpress.LookAndFeel;
 using DevExpress.Skins;
 using DevExpress.UserSkins;
 using System;
@@ -18,7 +19,15 @@ namespace ProyectoPACSD
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmLogin());
+            if (new InicioSesion { activo = true }.GetByActivo() != null)
+            {
+                Application.Run(new frmMain());
+            }
+            else
+            {
+                Application.Run(new frmLogin());
+            }
+
         }
     }
 }

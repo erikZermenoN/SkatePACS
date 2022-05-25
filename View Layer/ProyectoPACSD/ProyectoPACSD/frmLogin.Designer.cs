@@ -34,14 +34,17 @@
             this.txtContrasena = new DevExpress.XtraEditors.TextEdit();
             this.txtUsuario = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.chMantener = new DevExpress.XtraEditors.CheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtContrasena.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUsuario.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chMantener.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.chMantener);
             this.groupControl1.Controls.Add(this.btnIniciarSesion);
             this.groupControl1.Controls.Add(this.txtContrasena);
             this.groupControl1.Controls.Add(this.txtUsuario);
@@ -104,6 +107,14 @@
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Punto de\r\nVenta";
             // 
+            // chMantener
+            // 
+            this.chMantener.Location = new System.Drawing.Point(74, 194);
+            this.chMantener.Name = "chMantener";
+            this.chMantener.Properties.Caption = "Mantener sesión iniciada";
+            this.chMantener.Size = new System.Drawing.Size(142, 20);
+            this.chMantener.TabIndex = 5;
+            // 
             // frmLogin
             // 
             this.AcceptButton = this.btnIniciarSesion;
@@ -128,6 +139,7 @@
             this.groupControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtContrasena.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUsuario.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chMantener.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -139,5 +151,6 @@
         private DevExpress.XtraEditors.TextEdit txtContrasena;
         private DevExpress.XtraEditors.TextEdit txtUsuario;
         private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.CheckEdit chMantener;
     }
 }

@@ -16,6 +16,7 @@ namespace BML
         public string fecha { get; set; }
         public double subtotal { get; set; }
         public double iva { get; set; }
+        public double descuento { get; set; }
         public double total { get; set; }
 
         private DataAccess dataAccess = DataAccess.Instance();
@@ -30,6 +31,7 @@ namespace BML
             parameters.Add("@fecha", fecha);
             parameters.Add("@subtotal", subtotal);
             parameters.Add("@iva", iva);
+            parameters.Add("@descuento", descuento);
             parameters.Add("@total", total);
             return dataAccess.Execute("stp_ventas_add", parameters);
         }
@@ -77,6 +79,7 @@ namespace BML
             parameters.Add("@fecha", fecha);
             parameters.Add("@subtotal", subtotal);
             parameters.Add("@iva", iva);
+            parameters.Add("@descuento", descuento);
             parameters.Add("@total", total);
             return dataAccess.Execute("stp_ventas_update", parameters);
         }
