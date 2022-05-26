@@ -32,36 +32,38 @@ namespace ProyectoPACSD
         private void frmNMCategoria_Load(object sender, EventArgs e)
         {
             obtenerDatos();
-            btnGuardar.Enabled = false;
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (idCategoria > 0)
+            if (validar())
             {
-                if (new Categoria
+                if (idCategoria > 0)
                 {
-                    idCategoria = this.idCategoria,
-                    nombre = txtNombre.Text,
-                }.Update() > 0)
-                {
-                    XtraMessageBox.Show("Categoria actualizada correctamente", Application.ProductName,
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Clean();
-                    this.Close();
+                    if (new Categoria
+                    {
+                        idCategoria = this.idCategoria,
+                        nombre = txtNombre.Text,
+                    }.Update() > 0)
+                    {
+                        XtraMessageBox.Show("Categoria actualizada correctamente", Application.ProductName,
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Clean();
+                        this.Close();
+                    }
                 }
-            }
-            else
-            {
-                if (new Categoria
+                else
                 {
-                    idCategoria = this.idCategoria,
-                    nombre = txtNombre.Text,
-                }.Add() > 0)
-                {
-                    XtraMessageBox.Show("Categoria almacenada correctamente", Application.ProductName,
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Clean();
+                    if (new Categoria
+                    {
+                        idCategoria = this.idCategoria,
+                        nombre = txtNombre.Text,
+                    }.Add() > 0)
+                    {
+                        XtraMessageBox.Show("Categoria almacenada correctamente", Application.ProductName,
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Clean();
+                    }
                 }
             }
         }
@@ -71,10 +73,6 @@ namespace ProyectoPACSD
             Close();
         }
 
-        private void txtNombre_EditValueChanged(object sender, EventArgs e)
-        {
-            habilitar();
-        }
 
         private void frmNMCategoria_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -99,18 +97,6 @@ namespace ProyectoPACSD
             else
             {
                 this.Dispose();
-            }
-        }
-
-        private void habilitar()
-        {
-            if (txtNombre.Text.Length > 0)
-            {
-                btnGuardar.Enabled = true;
-            }
-            else
-            {
-                btnGuardar.Enabled = false;
             }
         }
 
@@ -140,6 +126,25 @@ namespace ProyectoPACSD
             }
         }
 
+        private bool validar()
+        {
+            var ban = false;
+            if (txtNombre.EditValue == null || txtNombre.Text.Equals(""))
+            {
+                txtNombre.ErrorText = "Ingrese su categoria";
+                txtNombre.Focus();
+                ban = true;
+            }
+
+            if (ban == true)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
         private void Clean()// Limpieza de los campos
         {
             txtNombre.Text = "";

@@ -37,7 +37,6 @@
             this.btnCancelar = new DevExpress.XtraEditors.SimpleButton();
             this.btnGuardar = new DevExpress.XtraEditors.SimpleButton();
             this.txtTipoUsuario = new DevExpress.XtraEditors.TextEdit();
-            this.txtCorreo = new DevExpress.XtraEditors.TextEdit();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
@@ -48,16 +47,17 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.txtNombre = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.txtCorreo = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtContrasena.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUsuario.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtApellidoM.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTipoUsuario.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCorreo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTelefono.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtApellidoP.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNombre.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCorreo.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl1
@@ -102,7 +102,6 @@
             this.txtContrasena.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegExpMaskManager));
             this.txtContrasena.Size = new System.Drawing.Size(200, 20);
             this.txtContrasena.TabIndex = 8;
-            this.txtContrasena.EditValueChanged += new System.EventHandler(this.txtContrasena_EditValueChanged);
             // 
             // txtUsuario
             // 
@@ -111,7 +110,6 @@
             this.txtUsuario.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtUsuario.Size = new System.Drawing.Size(200, 20);
             this.txtUsuario.TabIndex = 7;
-            this.txtUsuario.EditValueChanged += new System.EventHandler(this.txtUsuario_EditValueChanged);
             // 
             // labelControl9
             // 
@@ -128,7 +126,6 @@
             this.txtApellidoM.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtApellidoM.Size = new System.Drawing.Size(200, 20);
             this.txtApellidoM.TabIndex = 3;
-            this.txtApellidoM.EditValueChanged += new System.EventHandler(this.txtApellidoM_EditValueChanged);
             // 
             // btnCancelar
             // 
@@ -161,16 +158,6 @@
             this.txtTipoUsuario.Properties.MaxLength = 1;
             this.txtTipoUsuario.Size = new System.Drawing.Size(113, 20);
             this.txtTipoUsuario.TabIndex = 6;
-            this.txtTipoUsuario.EditValueChanged += new System.EventHandler(this.txtTipoUsuario_EditValueChanged);
-            // 
-            // txtCorreo
-            // 
-            this.txtCorreo.Location = new System.Drawing.Point(115, 109);
-            this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtCorreo.Size = new System.Drawing.Size(200, 20);
-            this.txtCorreo.TabIndex = 5;
-            this.txtCorreo.EditValueChanged += new System.EventHandler(this.txtCorreo_EditValueChanged);
             // 
             // labelControl7
             // 
@@ -217,7 +204,6 @@
             this.txtTelefono.Properties.MaxLength = 10;
             this.txtTelefono.Size = new System.Drawing.Size(200, 20);
             this.txtTelefono.TabIndex = 4;
-            this.txtTelefono.EditValueChanged += new System.EventHandler(this.txtTelefono_EditValueChanged);
             // 
             // labelControl3
             // 
@@ -234,7 +220,6 @@
             this.txtApellidoP.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtApellidoP.Size = new System.Drawing.Size(200, 20);
             this.txtApellidoP.TabIndex = 2;
-            this.txtApellidoP.EditValueChanged += new System.EventHandler(this.txtApellidoP_EditValueChanged);
             // 
             // labelControl2
             // 
@@ -251,7 +236,6 @@
             this.txtNombre.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNombre.Size = new System.Drawing.Size(200, 20);
             this.txtNombre.TabIndex = 1;
-            this.txtNombre.EditValueChanged += new System.EventHandler(this.txtNombre_EditValueChanged);
             // 
             // labelControl1
             // 
@@ -260,6 +244,14 @@
             this.labelControl1.Size = new System.Drawing.Size(37, 13);
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Nombre";
+            // 
+            // txtCorreo
+            // 
+            this.txtCorreo.Location = new System.Drawing.Point(115, 109);
+            this.txtCorreo.Name = "txtCorreo";
+            this.txtCorreo.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtCorreo.Size = new System.Drawing.Size(200, 20);
+            this.txtCorreo.TabIndex = 5;
             // 
             // frmNMUsuario
             // 
@@ -284,10 +276,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtUsuario.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtApellidoM.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTipoUsuario.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCorreo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTelefono.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtApellidoP.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNombre.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCorreo.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -302,7 +294,6 @@
         private DevExpress.XtraEditors.SimpleButton btnCancelar;
         private DevExpress.XtraEditors.SimpleButton btnGuardar;
         private DevExpress.XtraEditors.TextEdit txtTipoUsuario;
-        private DevExpress.XtraEditors.TextEdit txtCorreo;
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.LabelControl labelControl4;
@@ -313,5 +304,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.TextEdit txtNombre;
         private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.TextEdit txtCorreo;
     }
 }

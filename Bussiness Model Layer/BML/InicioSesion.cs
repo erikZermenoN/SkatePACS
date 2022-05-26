@@ -15,6 +15,7 @@ namespace BML
         public DateTime fechaInicio { get; set; }
         public DateTime fechaTermino { get; set; }
         public DateTime fechaLimite { get; set; }
+        public bool mantenerAbierto { get; set; }
         public bool activo { get; set; }
 
         private DataAccess dataAccess = DataAccess.Instance();
@@ -28,6 +29,7 @@ namespace BML
             parameters.Add("@fechaInicio", fechaInicio);
             parameters.Add("@fechaTermino", fechaTermino);
             parameters.Add("@fechaLimite", fechaLimite);
+            parameters.Add("@mantenerAbierto", mantenerAbierto);
             return dataAccess.Execute("stp_iniciosesiones_inicio", parameters);
         }
 

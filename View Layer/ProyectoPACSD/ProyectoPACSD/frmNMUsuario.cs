@@ -25,51 +25,53 @@ namespace ProyectoPACSD
         private void frmNMUsuario_Load(object sender, EventArgs e)
         {
             obtenerDatos();
-            btnGuardar.Enabled = false;
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (idUsuario > 0)
+            if (validar())
             {
-                if (new Usuario
+                if (idUsuario > 0)
                 {
-                    idUsuario = this.idUsuario,
-                    nombre = txtNombre.Text,
-                    apellidoP = txtApellidoP.Text,
-                    apellidoM = txtApellidoM.Text,
-                    telefono = txtTelefono.Text,
-                    correo = txtCorreo.Text,
-                    tipo = txtTipoUsuario.Text,
-                    usuario = txtUsuario.Text,
-                    contrasena = txtContrasena.Text,
+                    if (new Usuario
+                    {
+                        idUsuario = this.idUsuario,
+                        nombre = txtNombre.Text,
+                        apellidoP = txtApellidoP.Text,
+                        apellidoM = txtApellidoM.Text,
+                        telefono = txtTelefono.Text,
+                        correo = txtCorreo.Text,
+                        tipo = txtTipoUsuario.Text,
+                        usuario = txtUsuario.Text,
+                        contrasena = txtContrasena.Text,
 
-                }.Update() > 0)
-                {
-                    XtraMessageBox.Show("Usuario actualizado correctamente", Application.ProductName,
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Clean();
-                    this.Close();
+                    }.Update() > 0)
+                    {
+                        XtraMessageBox.Show("Usuario actualizado correctamente", Application.ProductName,
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Clean();
+                        this.Close();
+                    }
                 }
-            }
-            else
-            {
-                if (new Usuario
+                else
                 {
-                    idUsuario = this.idUsuario,
-                    nombre = txtNombre.Text,
-                    apellidoP = txtApellidoP.Text,
-                    apellidoM = txtApellidoM.Text,
-                    telefono = txtTelefono.Text,
-                    correo = txtCorreo.Text,
-                    tipo = txtTipoUsuario.Text,
-                    usuario = txtUsuario.Text,
-                    contrasena = txtContrasena.Text,
-                }.Add() > 0)
-                {
-                    XtraMessageBox.Show("Usuario almacenado correctamente", Application.ProductName,
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Clean();
+                    if (new Usuario
+                    {
+                        idUsuario = this.idUsuario,
+                        nombre = txtNombre.Text,
+                        apellidoP = txtApellidoP.Text,
+                        apellidoM = txtApellidoM.Text,
+                        telefono = txtTelefono.Text,
+                        correo = txtCorreo.Text,
+                        tipo = txtTipoUsuario.Text,
+                        usuario = txtUsuario.Text,
+                        contrasena = txtContrasena.Text,
+                    }.Add() > 0)
+                    {
+                        XtraMessageBox.Show("Usuario almacenado correctamente", Application.ProductName,
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Clean();
+                    }
                 }
             }
         }
@@ -77,46 +79,6 @@ namespace ProyectoPACSD
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Close();
-        }
-
-        private void txtNombre_EditValueChanged(object sender, EventArgs e)
-        {
-            habilitar();
-        }
-
-        private void txtApellidoP_EditValueChanged(object sender, EventArgs e)
-        {
-            habilitar();
-        }
-
-        private void txtApellidoM_EditValueChanged(object sender, EventArgs e)
-        {
-            habilitar();
-        }
-
-        private void txtTelefono_EditValueChanged(object sender, EventArgs e)
-        {
-            habilitar();
-        }
-
-        private void txtCorreo_EditValueChanged(object sender, EventArgs e)
-        {
-            habilitar();
-        }
-
-        private void txtTipoUsuario_EditValueChanged(object sender, EventArgs e)
-        {
-            habilitar();
-        }
-
-        private void txtUsuario_EditValueChanged(object sender, EventArgs e)
-        {
-            habilitar();
-        }
-
-        private void txtContrasena_EditValueChanged(object sender, EventArgs e)
-        {
-            habilitar();
         }
 
         private void frmNMUsuario_FormClosing(object sender, FormClosingEventArgs e)
@@ -145,20 +107,6 @@ namespace ProyectoPACSD
             }
         }
 
-        private void habilitar()
-        {
-            if (txtNombre.Text.Length > 0 && txtApellidoP.Text.Length > 0 && txtApellidoM.Text.Length > 0
-                && txtTelefono.Text.Length == 10 && txtCorreo.Text.Length > 0 && txtTipoUsuario.Text.Length == 1
-                && txtUsuario.Text.Length > 0 && txtContrasena.Text.Length > 0)
-            {
-                btnGuardar.Enabled = true;
-            }
-            else
-            {
-                btnGuardar.Enabled = false;
-            }
-        }
-
         private bool Check()
         {
             if (txtNombre.Text != "" || txtApellidoP.Text != "" || txtApellidoM.Text != "" ||
@@ -170,6 +118,89 @@ namespace ProyectoPACSD
             else
             {
                 return false;
+            }
+        }
+
+        private bool validar()
+        {
+            var ban = false;
+            if (txtNombre.EditValue == null || txtNombre.Text.Equals(""))
+            {
+                txtNombre.ErrorText = "Ingrese el nombre del usuario";
+                txtNombre.Focus();
+                ban = true;
+            }
+            else
+            {
+                if (txtApellidoP.EditValue == null || txtApellidoP.Text.Equals(""))
+                {
+                    txtApellidoP.ErrorText = "Ingrese el apellido paterno del usuario";
+                    txtApellidoP.Focus();
+                    ban = true;
+                }
+                else
+                {
+                    if (txtApellidoM.EditValue == null || txtApellidoM.Text.Equals(""))
+                    {
+                        txtApellidoM.ErrorText = "Ingrese el apellido materno del usuario";
+                        txtApellidoM.Focus();
+                        ban = true;
+                    }
+                    else
+                    {
+                        if (txtTelefono.EditValue == null || txtTelefono.Text.Equals(""))
+                        {
+                            txtTelefono.ErrorText = "Ingrese el telefono del usuario";
+                            txtTelefono.Focus();
+                            ban = true;
+                        }
+                        else
+                        {
+                            if (txtCorreo.EditValue == null || txtCorreo.Text.Equals(""))
+                            {
+                                txtCorreo.ErrorText = "Ingrese el correo del usuario";
+                                txtCorreo.Focus();
+                                ban = true;
+                            }
+                            else
+                            {
+                                if (txtTipoUsuario.EditValue == null || txtTipoUsuario.Text.Equals(""))
+                                {
+                                    txtTipoUsuario.ErrorText = "Ingrese el tipo del usuario";
+                                    txtTipoUsuario.Focus();
+                                    ban = true;
+                                }
+                                else
+                                {
+                                    if (txtUsuario.EditValue == null || txtUsuario.Text.Equals(""))
+                                    {
+                                        txtUsuario.ErrorText = "Ingrese el usuario";
+                                        txtUsuario.Focus();
+                                        ban = true;
+                                    }
+                                    else
+                                    {
+                                        if (txtContrasena.EditValue == null || txtContrasena.Text.Equals(""))
+                                        {
+                                            txtContrasena.ErrorText = "Ingrese la contraseña";
+                                            txtContrasena.Focus();
+                                            ban = true;
+                                        }                                     
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            if (ban == true)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
             }
         }
 

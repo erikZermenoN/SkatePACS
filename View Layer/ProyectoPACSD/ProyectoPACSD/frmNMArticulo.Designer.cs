@@ -38,9 +38,7 @@
             this.txtExistencia = new DevExpress.XtraEditors.TextEdit();
             this.txtPrecio = new DevExpress.XtraEditors.TextEdit();
             this.lupProveedor = new DevExpress.XtraEditors.LookUpEdit();
-            this.proveedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lupCategoria = new DevExpress.XtraEditors.LookUpEdit();
-            this.categoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.txtDescripcion = new DevExpress.XtraEditors.TextEdit();
             this.txtNombre = new DevExpress.XtraEditors.TextEdit();
             this.txtCodigo = new DevExpress.XtraEditors.TextEdit();
@@ -52,18 +50,20 @@
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.proveedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.categoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtImagen.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtExistencia.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPrecio.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lupProveedor.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.proveedorBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lupCategoria.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDescripcion.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNombre.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCodigo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.proveedorBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl1
@@ -129,7 +129,6 @@
             this.txtImagen.Properties.MaxLength = 100;
             this.txtImagen.Size = new System.Drawing.Size(100, 20);
             this.txtImagen.TabIndex = 34;
-            this.txtImagen.EditValueChanged += new System.EventHandler(this.txtImagen_EditValueChanged);
             // 
             // txtExistencia
             // 
@@ -142,7 +141,6 @@
             this.txtExistencia.Properties.MaxLength = 4;
             this.txtExistencia.Size = new System.Drawing.Size(135, 20);
             this.txtExistencia.TabIndex = 33;
-            this.txtExistencia.EditValueChanged += new System.EventHandler(this.txtExistencia_EditValueChanged);
             // 
             // txtPrecio
             // 
@@ -155,7 +153,6 @@
             this.txtPrecio.Properties.MaxLength = 10;
             this.txtPrecio.Size = new System.Drawing.Size(135, 20);
             this.txtPrecio.TabIndex = 32;
-            this.txtPrecio.EditValueChanged += new System.EventHandler(this.txtPrecio_EditValueChanged);
             // 
             // lupProveedor
             // 
@@ -177,11 +174,6 @@
             this.lupProveedor.Properties.ValueMember = "idProveedor";
             this.lupProveedor.Size = new System.Drawing.Size(135, 20);
             this.lupProveedor.TabIndex = 31;
-            this.lupProveedor.EditValueChanged += new System.EventHandler(this.lupProveedor_EditValueChanged);
-            // 
-            // proveedorBindingSource
-            // 
-            this.proveedorBindingSource.DataSource = typeof(BML.Proveedor);
             // 
             // lupCategoria
             // 
@@ -201,11 +193,6 @@
             this.lupCategoria.Properties.ValueMember = "idCategoria";
             this.lupCategoria.Size = new System.Drawing.Size(135, 20);
             this.lupCategoria.TabIndex = 30;
-            this.lupCategoria.EditValueChanged += new System.EventHandler(this.lupCategoria_EditValueChanged);
-            // 
-            // categoriaBindingSource
-            // 
-            this.categoriaBindingSource.DataSource = typeof(BML.Categoria);
             // 
             // txtDescripcion
             // 
@@ -215,7 +202,6 @@
             this.txtDescripcion.Properties.MaxLength = 100;
             this.txtDescripcion.Size = new System.Drawing.Size(135, 20);
             this.txtDescripcion.TabIndex = 29;
-            this.txtDescripcion.EditValueChanged += new System.EventHandler(this.txtDescripcion_EditValueChanged);
             // 
             // txtNombre
             // 
@@ -225,7 +211,6 @@
             this.txtNombre.Properties.MaxLength = 50;
             this.txtNombre.Size = new System.Drawing.Size(135, 20);
             this.txtNombre.TabIndex = 28;
-            this.txtNombre.EditValueChanged += new System.EventHandler(this.txtNombre_EditValueChanged);
             // 
             // txtCodigo
             // 
@@ -235,7 +220,6 @@
             this.txtCodigo.Properties.MaxLength = 10;
             this.txtCodigo.Size = new System.Drawing.Size(135, 20);
             this.txtCodigo.TabIndex = 27;
-            this.txtCodigo.EditValueChanged += new System.EventHandler(this.txtCodigo_EditValueChanged);
             // 
             // labelControl8
             // 
@@ -301,6 +285,14 @@
             this.labelControl1.TabIndex = 19;
             this.labelControl1.Text = "Codigo:";
             // 
+            // proveedorBindingSource
+            // 
+            this.proveedorBindingSource.DataSource = typeof(BML.Proveedor);
+            // 
+            // categoriaBindingSource
+            // 
+            this.categoriaBindingSource.DataSource = typeof(BML.Categoria);
+            // 
             // frmNMArticulo
             // 
             this.AcceptButton = this.btnGuardar;
@@ -316,7 +308,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frmNMArticulo";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmNMArticulo_FormClosing);
-            this.Load += new System.EventHandler(this.frmNMArticulo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
@@ -324,12 +315,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtExistencia.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPrecio.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lupProveedor.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.proveedorBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lupCategoria.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDescripcion.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNombre.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCodigo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.proveedorBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

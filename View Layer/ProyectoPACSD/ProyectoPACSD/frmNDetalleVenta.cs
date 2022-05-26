@@ -29,7 +29,7 @@ namespace ProyectoPACSD
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (lupArticulo.EditValue != null && txtCantidad.Text != "")
+            if (validar())
             {
                 if (!(txtCantidad.Text == "0"))
                 {
@@ -81,12 +81,6 @@ namespace ProyectoPACSD
                     MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
-            else
-            {
-                MessageBox.Show("Debe llenar todos los campos", "¡Atención!",
-                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-
         }
 
         private void frmNDetalleVenta_FormClosing(object sender, FormClosingEventArgs e)
@@ -104,6 +98,38 @@ namespace ProyectoPACSD
                 {
                     e.Cancel = true;
                 }
+            }
+        }
+
+        private bool validar()
+        {
+            var ban = false;
+            if (lupArticulo.EditValue == null || lupArticulo.Text.Equals(""))
+            {
+                lupArticulo.ErrorText = "Seleccione un articulo";
+                lupArticulo.Focus();
+                ban = true;
+            }
+            else
+            {
+                if (txtCantidad.EditValue == null || txtCantidad.Text.Equals(""))
+                {
+                    txtCantidad.ErrorText = "Ingrese la cantidad";
+                    txtCantidad.Focus();
+                    ban = true;
+                }
+                else
+                {
+                }
+            }
+
+            if (ban == true)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
             }
         }
     }

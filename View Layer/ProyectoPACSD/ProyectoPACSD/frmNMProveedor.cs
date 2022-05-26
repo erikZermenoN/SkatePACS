@@ -32,7 +32,6 @@ namespace ProyectoPACSD
         private void frmNMProveedor_Load(object sender, EventArgs e)
         {
             obtenerDatos();
-            btnGuardar.Enabled = false;
         }
 
         private void frmNMProveedor_FormClosing(object sender, FormClosingEventArgs e)
@@ -63,35 +62,38 @@ namespace ProyectoPACSD
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (idProveedor > 0)
+            if (validar())
             {
-                if (new Proveedor
+                if (idProveedor > 0)
                 {
-                    idProveedor = this.idProveedor,
-                    nombre = txtNombre.Text,
-                    telefono = txtTelefono.Text,
-                    correo = txtCorreo.Text,
-                }.Update() > 0)
-                {
-                    XtraMessageBox.Show("Proveedor actualizado correctamente", Application.ProductName,
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Clean();
-                    this.Close();
+                    if (new Proveedor
+                    {
+                        idProveedor = this.idProveedor,
+                        nombre = txtNombre.Text,
+                        telefono = txtTelefono.Text,
+                        correo = txtCorreo.Text,
+                    }.Update() > 0)
+                    {
+                        XtraMessageBox.Show("Proveedor actualizado correctamente", Application.ProductName,
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Clean();
+                        this.Close();
+                    }
                 }
-            }
-            else
-            {
-                if (new Proveedor
+                else
                 {
-                    idProveedor = this.idProveedor,
-                    nombre = txtNombre.Text,
-                    telefono = txtTelefono.Text,
-                    correo = txtCorreo.Text,
-                }.Add() > 0)
-                {
-                    XtraMessageBox.Show("Proveedor almacenado correctamente", Application.ProductName,
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Clean();
+                    if (new Proveedor
+                    {
+                        idProveedor = this.idProveedor,
+                        nombre = txtNombre.Text,
+                        telefono = txtTelefono.Text,
+                        correo = txtCorreo.Text,
+                    }.Add() > 0)
+                    {
+                        XtraMessageBox.Show("Proveedor almacenado correctamente", Application.ProductName,
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Clean();
+                    }
                 }
             }
         }
@@ -99,21 +101,6 @@ namespace ProyectoPACSD
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Close();
-        }
-
-        private void txtNombre_EditValueChanged(object sender, EventArgs e)
-        {
-            habilitar();
-        }
-
-        private void txtTelefono_EditValueChanged(object sender, EventArgs e)
-        {
-            habilitar();
-        }
-
-        private void txtCorreo_EditValueChanged(object sender, EventArgs e)
-        {
-            habilitar();
         }
 
         private void Clean()// Limpieza de los campos
@@ -140,18 +127,6 @@ namespace ProyectoPACSD
             }
         }
 
-        private void habilitar()
-        {
-            if (txtNombre.Text.Length > 0 && txtTelefono.Text.Length == 10 && txtCorreo.Text.Length > 0)
-            {
-                btnGuardar.Enabled = true;
-            }
-            else
-            {
-                btnGuardar.Enabled = false;
-            }
-        }
-
         private bool Check()
         {
             if (txtNombre.Text != "" || txtCorreo.Text != "" ||
@@ -162,6 +137,44 @@ namespace ProyectoPACSD
             else
             {
                 return false;
+            }
+        }
+
+        private bool validar()
+        {
+            var ban = false;
+            if (txtNombre.EditValue == null || txtNombre.Text.Equals(""))
+            {
+                txtNombre.ErrorText = "Ingrese el nombre del proveedor";
+                txtNombre.Focus();
+                ban = true;
+            }
+            else
+            {
+                if (txtTelefono.EditValue == null || txtTelefono.Text.Equals(""))
+                {
+                    txtTelefono.ErrorText = "Ingrese el telefono del proveedor";
+                    txtTelefono.Focus();
+                    ban = true;
+                }
+                else
+                {
+                    if (txtCorreo.EditValue == null || txtCorreo.Text.Equals(""))
+                    {
+                        txtCorreo.ErrorText = "Ingrese el correo del proveedor";
+                        txtCorreo.Focus();
+                        ban = true;
+                    }
+                }
+            }
+
+            if (ban == true)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
             }
         }
     }

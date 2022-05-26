@@ -30,16 +30,16 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.chMantener = new DevExpress.XtraEditors.CheckEdit();
             this.btnIniciarSesion = new DevExpress.XtraEditors.SimpleButton();
             this.txtContrasena = new DevExpress.XtraEditors.TextEdit();
             this.txtUsuario = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.chMantener = new DevExpress.XtraEditors.CheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chMantener.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtContrasena.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUsuario.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chMantener.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl1
@@ -56,6 +56,14 @@
             this.groupControl1.Size = new System.Drawing.Size(273, 258);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "groupControl1";
+            // 
+            // chMantener
+            // 
+            this.chMantener.Location = new System.Drawing.Point(74, 194);
+            this.chMantener.Name = "chMantener";
+            this.chMantener.Properties.Caption = "Mantener sesión iniciada";
+            this.chMantener.Size = new System.Drawing.Size(142, 20);
+            this.chMantener.TabIndex = 5;
             // 
             // btnIniciarSesion
             // 
@@ -107,14 +115,6 @@
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Punto de\r\nVenta";
             // 
-            // chMantener
-            // 
-            this.chMantener.Location = new System.Drawing.Point(74, 194);
-            this.chMantener.Name = "chMantener";
-            this.chMantener.Properties.Caption = "Mantener sesión iniciada";
-            this.chMantener.Size = new System.Drawing.Size(142, 20);
-            this.chMantener.TabIndex = 5;
-            // 
             // frmLogin
             // 
             this.AcceptButton = this.btnIniciarSesion;
@@ -134,12 +134,13 @@
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Iniciar Sesión";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmLogin_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chMantener.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtContrasena.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUsuario.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chMantener.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -81,8 +81,7 @@ namespace ProyectoPACSD
 
             if (opcion == DialogResult.OK)
             {
-                if (new InicioSesion { activo = true }.GetByActivo() != null)
-                {
+
                     if (new InicioSesion
                     {
                         idInicioSesion = new InicioSesion { activo = true }.GetByActivo().idInicioSesion,
@@ -90,10 +89,10 @@ namespace ProyectoPACSD
                     }.CerrarSesion() > 0)
                     {
                     }
-                }
+
                 
                frmLogin form  = new frmLogin();
-               form.Visible = true;
+               form.Show();
                this.Dispose();
             }
         }
@@ -126,6 +125,16 @@ namespace ProyectoPACSD
             // If the no button was pressed ...
             if (result == DialogResult.Yes)
             {
+                if (new InicioSesion { activo = true }.GetByActivo().mantenerAbierto == false)
+                {
+                    if (new InicioSesion
+                    {
+                        idInicioSesion = new InicioSesion { activo = true }.GetByActivo().idInicioSesion,
+                        fechaTermino = DateTime.Now
+                    }.CerrarSesion() > 0)
+                    {
+                    }
+                }
                 Application.Exit();
             }
         }

@@ -56,7 +56,7 @@ namespace ProyectoPACSD
         {
             if (idArticulo == 0)// Se ejecuta si se esta agregando nuevo articulo
             {
-                if (CheckFull())
+                if (validar())
                 {
                     if (new Articulo() {
                         idCategoria = Convert.ToInt32(lupCategoria.EditValue),
@@ -82,15 +82,10 @@ namespace ProyectoPACSD
                     }
 
                 }
-                else
-                {
-                    MessageBox.Show("Debes llenar todos los campos", Application.ProductName,
-                            MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
             }
             else// Se ejecuta si se esta modificando un articulo
             {
-                if (CheckFull())
+                if (validar())
                 {
                     if (new Articulo()
                     {
@@ -116,31 +111,11 @@ namespace ProyectoPACSD
                                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-                else
-                {
-                    MessageBox.Show("Debes llenar todos los campos", Application.ProductName,
-                            MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
             }
         }
         #endregion
 
         #region Revisión de campos
-        private bool CheckFull()// Revisa que todos los campos esten llenos
-        {
-            if (txtCodigo.Text != "" && txtNombre.Text != "" &&
-                txtDescripcion.Text != "" && txtPrecio.Text != "" &&
-                txtExistencia.Text != "" && txtImagen.Text != "" &&
-                lupCategoria.EditValue != null && lupProveedor.EditValue != null)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-
         private bool Check() // Revisa almenos uno de los campos esten lleno
         {
             if (txtCodigo.Text != "" || txtNombre.Text != "" ||
@@ -153,6 +128,91 @@ namespace ProyectoPACSD
             else
             {
                 return false;
+            }
+        }
+        private bool validar()
+        {
+            var ban = false;
+            if (txtCodigo.EditValue == null || txtCodigo.Text.Equals(""))
+            {
+                txtCodigo.ErrorText = "Ingrese el codigo del producto";
+                txtCodigo.Focus();
+                ban = true;
+            }
+            else
+            {
+                if (txtNombre.EditValue == null || txtNombre.Text.Equals(""))
+                {
+                    txtNombre.ErrorText = "Ingrese el nombre del producto";
+                    txtNombre.Focus();
+                    ban = true;
+                }
+                else
+                {
+                    if (txtDescripcion.EditValue == null || txtDescripcion.Text.Equals(""))
+                    {
+                        txtDescripcion.ErrorText = "Ingrese la descripción del producto";
+                        txtDescripcion.Focus();
+                        ban = true;
+                    }
+                    else
+                    {
+                        if (lupCategoria.EditValue == null || lupCategoria.Text.Equals(""))
+                        {
+                            lupCategoria.ErrorText = "Ingrese la categoria del producto";
+                            lupCategoria.Focus();
+                            ban = true;
+                        }
+                        else
+                        {
+                            if (lupProveedor.EditValue == null || lupProveedor.Text.Equals(""))
+                            {
+                                lupProveedor.ErrorText = "Ingrese el nombre del proveedor";
+                                lupProveedor.Focus();
+                                ban = true;
+                            }
+                            else
+                            {
+                                if (txtPrecio.EditValue == null || txtPrecio.Text.Equals(""))
+                                {
+                                    txtPrecio.ErrorText = "Ingrese el precio del producto";
+                                    txtPrecio.Focus();
+                                    ban = true;
+                                }
+                                else
+                                {
+                                    if (txtExistencia.EditValue == null || txtExistencia.Text.Equals(""))
+                                    {
+                                        txtExistencia.ErrorText = "Ingrese la existencia del producto";
+                                        txtExistencia.Focus();
+                                        ban = true;
+                                    }
+                                    else
+                                    {
+                                        if (txtImagen.EditValue == null || txtImagen.Text.Equals(""))
+                                        {
+                                            txtImagen.ErrorText = "Ingrese la ruta de la imagen";
+                                            txtImagen.Focus();
+                                            ban = true;
+                                        }
+                                        else
+                                        {
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            if (ban == true)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
             }
         }
         #endregion
@@ -193,68 +253,5 @@ namespace ProyectoPACSD
             }
         }
         #endregion
-
-        #region Habilitar
-        private void habilitar()
-        {
-            if (txtCodigo.Text.Length == 10 && txtNombre.Text.Length > 0 && txtDescripcion.Text.Length > 0 &&
-                 lupProveedor.Text.Length > 0 && txtPrecio.Text.Length > 0 && txtExistencia.Text.Length > 0 &&
-                  txtImagen.Text.Length > 0)
-            {
-                btnGuardar.Enabled = true;
-            }
-            else
-            {
-                btnGuardar.Enabled = false;
-            }
-        }
-        #endregion
-
-        #region Campos
-        private void txtCodigo_EditValueChanged(object sender, EventArgs e)
-        {
-            habilitar();
-        }
-
-        private void txtNombre_EditValueChanged(object sender, EventArgs e)
-        {
-            habilitar();
-        }
-
-        private void txtDescripcion_EditValueChanged(object sender, EventArgs e)
-        {
-            habilitar();
-        }
-
-        private void lupCategoria_EditValueChanged(object sender, EventArgs e)
-        {
-            habilitar();
-        }
-
-        private void lupProveedor_EditValueChanged(object sender, EventArgs e)
-        {
-            habilitar();
-        }
-
-        private void txtPrecio_EditValueChanged(object sender, EventArgs e)
-        {
-            habilitar();
-        }
-
-        private void txtExistencia_EditValueChanged(object sender, EventArgs e)
-        {
-            habilitar();
-        }
-
-        private void txtImagen_EditValueChanged(object sender, EventArgs e)
-        {
-            habilitar();
-        }
-        #endregion
-
-        private void frmNMArticulo_Load(object sender, EventArgs e)
-        {
-            btnGuardar.Enabled = false;
-        }
     }
 }

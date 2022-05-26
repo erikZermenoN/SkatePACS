@@ -122,9 +122,13 @@ namespace ProyectoPACSD
                         {
                             idVenta = idVenta,
                             idUsuario = Convert.ToInt32(lupUsuario.EditValue),
-                            total = Convert.ToDouble(txtTotal.Text),
                             fecha = txtFecha.Text,
+                            subtotal = Convert.ToDouble(txtTotal.Text),
+                            iva = 100 * (16 / Convert.ToDouble(txtTotal.Text)),
+                            total = Convert.ToDouble(txtTotal.Text) + (100 * (16 / Convert.ToDouble(txtTotal.Text))),
+                            descuento = 0,
                             noComprobante = txtNoComprobante.Text
+
                         }.Update() > 0)
                         {
                             MessageBox.Show("La venta se a registrado correctamente", Application.ProductName,
@@ -152,8 +156,8 @@ namespace ProyectoPACSD
             }
             else
             {
-                MessageBox.Show("Seleccione el empleado a realizar la venta", "¡Atención!",
-                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                lupUsuario.ErrorText = "Selecciona un empleado";
+                lupUsuario.Focus();
             }
         }
 

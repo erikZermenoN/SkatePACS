@@ -21,13 +21,52 @@ namespace ProyectoPACSD
             Application.SetCompatibleTextRenderingDefault(false);
             if (new InicioSesion { activo = true }.GetByActivo() != null)
             {
-                Application.Run(new frmMain());
+                int resultado = DateTime.Compare(new InicioSesion { activo = true }.GetByActivo().fechaLimite, DateTime.Now);
+                if(resultado < 0)
+                {
+                    if (new InicioSesion
+                    {
+                        idInicioSesion = new InicioSesion { activo = true }.GetByActivo().idInicioSesion,
+                        fechaTermino = DateTime.Now
+                    }.CerrarSesion() > 0)
+                    {
+                    }
+                    frmLogin login = new frmLogin();
+                    login.FormClosed += MainForm_Closed;
+                    login.Show();
+                    Application.Run();
+                }
+                else
+                {
+                    frmMain main = new frmMain();
+                    main.FormClosed += MainForm_Closed;
+                    main.Show();
+                    Application.Run();
+                }
+                
             }
             else
             {
-                Application.Run(new frmLogin());
+                frmLogin login = new frmLogin();
+                login.FormClosed += MainForm_Closed;
+                login.Show();
+                Application.Run();
             }
 
+        }
+
+        private static void MainForm_Closed(object sender, FormClosedEventArgs e)
+        {
+            ((Form)sender).FormClosed -= MainForm_Closed;
+
+            if (Application.OpenForms.Count == 0)
+            {
+                Application.Exit();
+            }
+            else
+            {
+                Application.OpenForms[0].FormClosed += MainForm_Closed;
+            }
         }
     }
 }

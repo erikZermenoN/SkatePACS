@@ -91,7 +91,6 @@
             this.txtCorreo.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtCorreo.Size = new System.Drawing.Size(200, 20);
             this.txtCorreo.TabIndex = 3;
-            this.txtCorreo.EditValueChanged += new System.EventHandler(this.txtCorreo_EditValueChanged);
             // 
             // labelControl4
             // 
@@ -121,7 +120,6 @@
             this.txtTelefono.Properties.MaxLength = 10;
             this.txtTelefono.Size = new System.Drawing.Size(200, 20);
             this.txtTelefono.TabIndex = 2;
-            this.txtTelefono.EditValueChanged += new System.EventHandler(this.txtTelefono_EditValueChanged);
             // 
             // txtNombre
             // 
@@ -130,7 +128,6 @@
             this.txtNombre.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNombre.Size = new System.Drawing.Size(200, 20);
             this.txtNombre.TabIndex = 1;
-            this.txtNombre.EditValueChanged += new System.EventHandler(this.txtNombre_EditValueChanged);
             // 
             // labelControl1
             // 

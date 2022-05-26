@@ -62,7 +62,6 @@
             this.txtNombre.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNombre.Size = new System.Drawing.Size(200, 20);
             this.txtNombre.TabIndex = 1;
-            this.txtNombre.EditValueChanged += new System.EventHandler(this.txtNombre_EditValueChanged);
             // 
             // labelControl1
             // 
